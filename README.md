@@ -11,7 +11,7 @@ Configuration
 
 1. There is schema defination in Config -> Schema where you define schema. If you want to know how to define schema follow this link http://mandango.org/doc/mandango/basic-mapping.html
 
-2. There is another configuration , i.e. Config -> Mondator, if you change schema or create new one, then make it (run => true) for one time then again false. For better Performance. Initially I make it true after 1 run make it false. And Then Whenever You Changes schema make it true for one time.
+2. There is another configuration , i.e. Config -> Mondator, if you change schema or create new one, then make it (run => true) for one time then again false for better performance. Initially I make it true after 1 run make it false. And Then Whenever You Changes schema make it true for one time.
 
 3. In Database Configuration You set your database options.
 
