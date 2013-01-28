@@ -1,8 +1,3 @@
-Laravel-Mandango
-================
-
-Laravel MongoDB ODM Mandango
-
 This is Mandango ODM bundle for Laravel.
 
 I setup Base Bundle which is very easy to use.
