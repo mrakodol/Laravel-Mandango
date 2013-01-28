@@ -3,7 +3,6 @@
 return array(
     		'Model\Author' => array(
     			'collection' => 'author',
-    			'connection' => 'uconnection',
         	   'fields' => array(
           	     'name' => 'string',
         	   ),
@@ -11,7 +10,6 @@ return array(
 
     		'Model\Article' => array(
     			'collection' => 'articles',
-    			'connection' => 'uconnection',
         	    'fields' => array(
                     'title'   => 'string',
                     'content' => 'string',

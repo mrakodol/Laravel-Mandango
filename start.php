@@ -21,6 +21,8 @@ if($run){
 	        'metadata_factory_output' => path('app').'models/Mapping',
 	        'default_output'          => path('app').'models',
 	    )),
+	    new Mandango\Extension\DocumentArrayAccess(),
+    	new Mandango\Extension\DocumentPropertyOverloading(),
 	));
 	// process
 	$mondator->process();	
@@ -39,6 +41,7 @@ IoC::singleton('mandango', function()use($config){
 	$cache = new FilesystemCache(path('storage').'cache');
 	$mandango = new Mandango($metadataFactory, $cache);
 	$connection = new Connection($server, $db, $options);
-	$mandango->setConnection('uconnection', $connection);
+	$mandango->setConnection('connection', $connection);
+	$mandango->setDefaultConnectionName('connection');
 	return $mandango;
 });
