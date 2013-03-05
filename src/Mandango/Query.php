@@ -40,7 +40,7 @@ abstract class Query implements \Countable, \IteratorAggregate
     /**
      * Constructor.
      *
-     * @param string Mandango\Repository The repository of the document class to query.
+     * @param \Mandango\Repository $repository The repository of the document class to query.
      *
      * @api
      */
@@ -90,7 +90,7 @@ abstract class Query implements \Countable, \IteratorAggregate
     /**
      * Returns the repository.
      *
-     * @return Mandango\Repository The repository.
+     * @return \Mandango\Repository The repository.
      *
      * @api
      */
@@ -138,7 +138,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param array $criteria The criteria.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @api
      */
@@ -154,7 +154,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param array $criteria The criteria.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @api
      */
@@ -182,7 +182,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param array $fields The fields.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @api
      */
@@ -210,7 +210,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param array $references The references.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @throws \InvalidArgumentException If the references are not an array or null.
      *
@@ -244,7 +244,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param array|null $sort The sort.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @throws \InvalidArgumentException If the sort is not an array or null.
      *
@@ -278,7 +278,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param int|null $limit The limit.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @throws \InvalidArgumentException If the limit is not a valid integer or null.
      *
@@ -288,7 +288,7 @@ abstract class Query implements \Countable, \IteratorAggregate
     {
         if (null !== $limit) {
             if (!is_numeric($limit) || $limit != (int) $limit) {
-                throw new \InvalidArgumentException(sprintf('The limit "%s" is not valid.', $limit));
+                throw new \InvalidArgumentException('The limit is not valid.');
             }
             $limit = (int) $limit;
         }
@@ -315,7 +315,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param int|null $skip The skip.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @throws \InvalidArgumentException If the skip is not a valid integer, or null.
      *
@@ -325,7 +325,7 @@ abstract class Query implements \Countable, \IteratorAggregate
     {
         if (null !== $skip) {
             if (!is_numeric($skip) || $skip != (int) $skip) {
-                throw new \InvalidArgumentException(sprintf('The skip "%s" is not valid.', $skip));
+                throw new \InvalidArgumentException('The skip is not valid.');
             }
             $skip = (int) $skip;
         }
@@ -352,7 +352,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param int|null $batchSize The batch size.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @api
      */
@@ -360,7 +360,7 @@ abstract class Query implements \Countable, \IteratorAggregate
     {
         if (null !== $batchSize) {
             if (!is_numeric($batchSize) || $batchSize != (int) $batchSize) {
-                throw new \InvalidArgumentException(sprintf('The batchSize "%s" is not valid.', $batchSize));
+                throw new \InvalidArgumentException('The batchSize is not valid.');
             }
             $batchSize = (int) $batchSize;
         }
@@ -387,7 +387,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param array|null The hint.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @api
      */
@@ -419,7 +419,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param Boolean|null $okay If it is okay to query the slave (true by default).
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      */
     public function slaveOkay($okay = true)
     {
@@ -449,7 +449,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param bool $snapshot If the snapshot mode is used.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @api
      */
@@ -481,7 +481,7 @@ abstract class Query implements \Countable, \IteratorAggregate
      *
      * @param int|null $timeout The timeout of the cursor.
      *
-     * @return Mandango\Query The query instance (fluent interface).
+     * @return \Mandango\Query The query instance (fluent interface).
      *
      * @api
      */
@@ -489,7 +489,7 @@ abstract class Query implements \Countable, \IteratorAggregate
     {
         if (null !== $timeout) {
             if (!is_numeric($timeout) || $timeout != (int) $timeout) {
-                throw new \InvalidArgumentException(sprintf('The limit "%s" is not valid.', $timeout));
+                throw new \InvalidArgumentException('The timeout is not valid.');
             }
             $timeout = (int) $timeout;
         }
@@ -535,7 +535,7 @@ abstract class Query implements \Countable, \IteratorAggregate
     /**
      * Returns one result.
      *
-     * @return Mandango\Document\Document|null A document or null if there is no any result.
+     * @return \Mandango\Document\Document|null A document or null if there is no any result.
      *
      * @api
      */
