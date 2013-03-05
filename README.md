@@ -4,6 +4,9 @@
 
 **Mandango**, MongoDB ODM, I have created Laravel Bundle using Mandango <http://mandango.org/>.
 
+### Use Composer to complete installation. 
+Command used to install vendor's files 
+``` composer install ```
 ####  Configuration
 
 1. Database Config : In Database Configuration you can set your database in 'db' and in options you have to set username password for admin if you don't specify db in options. If you specify same db in both place then give thats db username and password. 
