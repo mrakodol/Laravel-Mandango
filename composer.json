@@ -1,0 +1,6 @@
+{
+	"require": {
+		"mandango/mandango": "dev-master"
+	},
+	"minimum-stability": "dev"
+}
