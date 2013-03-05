@@ -25,6 +25,7 @@ if($run){
 	        'default_output'          => $directory.'/Model',
 	    )),
 	    new Mandango\Extension\DocumentPropertyOverloading(),
+	    new Mandango\Extension\DocumentArrayAccess(),
 	));
 	$mondator->process();
 }
