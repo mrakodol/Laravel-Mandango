@@ -42,10 +42,10 @@ IoC::singleton('mandango', function()use($config){
 	$cache = new FilesystemCache(path('storage').'cache');
 	$mandango = new Mandango($metadata, $cache);
 	$connection = new Connection($server, $db, $options);
-	$mandango->setConnection('unester', $connection);
-	$mandango->setDefaultConnectionName('unester');
+	$mandango->setConnection('test', $connection);
+	$mandango->setDefaultConnectionName('test');
 	return $mandango;
 });
 
-$mandango = IoC::resolve('mandango');
-dd($mandango);
+// use anywhere
+//$mandango = IoC::resolve('mandango');

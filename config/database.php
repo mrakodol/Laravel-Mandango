@@ -2,11 +2,11 @@
 
 return array(
 	'server' => 'mongodb://localhost:27017',
-	'db' => 'unester',
+	'db' => 'test',
 	'options' => array(
-		'db' => 'unester',
-		'username' => 'boparaiamrit',
-		'password' => 'MacBook',
+		'db' => 'test',
+		'username' => '',
+		'password' => '',
 		'connect'  => true,
 	),
 );
