@@ -42,8 +42,8 @@ IoC::singleton('mandango', function()use($config){
 	$cache = new FilesystemCache(path('storage').'cache');
 	$mandango = new Mandango($metadata, $cache);
 	$connection = new Connection($server, $db, $options);
-	$mandango->setConnection('test', $connection);
-	$mandango->setDefaultConnectionName('test');
+	$mandango->setConnection($db, $connection);
+	$mandango->setDefaultConnectionName($db);
 	return $mandango;
 });
 

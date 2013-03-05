@@ -2,9 +2,9 @@
 
 return array(
 	'server' => 'mongodb://localhost:27017',
-	'db' => 'test',
+	'db' => 'laravel',
 	'options' => array(
-		'db' => 'test',
+		'db' => 'laravel',
 		// 'username' => '',
 		// 'password' => '',
 		'connect'  => true,
