@@ -5,8 +5,8 @@ return array(
 	'db' => 'test',
 	'options' => array(
 		'db' => 'test',
-		'username' => '',
-		'password' => '',
+		// 'username' => '',
+		// 'password' => '',
 		'connect'  => true,
 	),
 );
