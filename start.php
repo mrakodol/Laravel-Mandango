@@ -1,6 +1,12 @@
 <?php
 
-$loader = require __DIR__.'/vendor/autoload.php';
+$autoload = __DIR__.'/vendor/autoload.php';
+if(file_exists($autoload)){
+	$loader = require $autoload;
+}else{
+	echo "Go to terminal and run 'composer install' on mandango bundle, otherwise you donot use this bundle. If you donot know about composer then google for it.";
+	die;
+}
 $loader->add('Model', __DIR__);
 
 use Mandango\Mondator\Mondator;
