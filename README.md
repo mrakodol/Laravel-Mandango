@@ -21,7 +21,7 @@ Route::get('/', function(){
 	$mandango = IoC::resolve('mandango');
 	$author = $mandango->create('Model\Author');
 	$author->setName('Mr. Singh');
-	//we use $author->name = 'Mr. Singh'; or $author['name] = 'Mr. Singh';
+	//we use $author->name = 'Mr. Singh'; or $author['name'] = 'Mr. Singh';
 	$author->save();
 	$article = $mandango->create('Model\Article');
 	$article->setTitle('Amritpal\'s Article');
