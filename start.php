@@ -15,9 +15,9 @@ $run = Config::get('mandango::mondator.run');
 
 if($run){
 	$mondator = new Mondator();
-	$directory = Config::get('mandango::mondator.directory');
 	$schema = Config::get('mandango::schema');
 	$mondator->setConfigClasses($schema);
+	$directory = Config::get('mandango::mondator.directory');
 	$mondator->setExtensions(array(
 	    new Mandango\Extension\Core(array(
 	        'metadata_factory_class'  => 'Model\Mapping\Metadata',
