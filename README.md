@@ -13,7 +13,7 @@ Command used to install vendor's files
 
 2. Schema Config : In Schema Configuration you define your own Schema(Default : I set it to Author and Article for example.).If you want to know how to define schema follow this link <http://mandango.org/doc/mandango/basic-mapping.html>
 
-3. Mondator Config : In Mondator Configuration you have to set Boolean value for <b>run</b>. If you change your schema or create new one, then make it true for first time and then again false for better performance. Every time it create necessary file in model Directory, but if you donot make any changes to your schema, then it is unnecessary Load. Initially I make it true after first run make it false and then whenever you changes schema make it true for one time.
+3. Mondator Config : In Mondator Configuration you have to set Boolean value for <b>run</b>. If you change your schema or create new one, then make it true for first time and then again false for better performance. Every time it creates necessary files in Model Directory (automatically build in bundle during first run) , but if you donot make any changes to your schema, then it is unnecessary load. Initially I make it true for first run after that make it false and then whenever you changes schema make it true for only one time.
 
 #### Use of Mandango Singelton in Routes
 ```
